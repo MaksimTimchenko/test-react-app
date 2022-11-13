@@ -8,7 +8,7 @@ const Page404 = () => {
         <div>
             <ErrorMessage/>
             <Link className=" block text-center mt-4" to="/">
-                <button >Back to main page</button>
+                <button className="py-2 px-8 bg-main text-white rounded-md">Back to main page</button>
             </Link>
         </div>
     )

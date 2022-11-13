@@ -15,8 +15,8 @@ const Job = ({item}) => {
     }
 
     return (
-        <div className=' flex  w-jobMobile small:container mx-16 small:mx-auto bg-bgMobile mid:bg-white mb-2   h-52 mid:w-md  mid:h-40 py-2 px-4  rounded-md shadow-3xl '>
-            <div className='flex absolute w-36 ml-56 small:ml-80 mid:ml-96'><span className='text-second text-sm mid:text-base inline mid:hidden'>Posted {findDate(item.created)} days ago</span></div>
+        <div className=' flex  w-343 small:container mx-auto bg-bgMobile mid:bg-white mb-2   h-52 mid:w-md  mid:h-40 py-2 px-4  rounded-md shadow-3xl '>
+            <div className='flex absolute w-36 ml-44 small:ml-80 mid:ml-96'><span className='text-second text-sm mid:text-base inline mid:hidden'>Posted {findDate(item.created)} days ago</span></div>
             <div className=' flex h-28 w-sm mt-5 mid:mt-0'>
                 
                 <div className='' >

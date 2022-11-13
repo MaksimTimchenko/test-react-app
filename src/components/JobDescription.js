@@ -40,7 +40,7 @@ const JobDescription = () => {
         return (
              
             <main className=' container  px-4 small:px-0 mx-auto  flex justify-around  flex-col large:flex-row mt-7 '>
-                <div className='w-full  large:w-descriptionMobile'>
+                <div className='w-343  small:w-full large:w-descriptionMobile'>
                     <div className='flex justify-between flex-col mid:flex-row border-b-2 border-main-500/50 h-11  '>
                         <h1 className='font-bold color-main text-2xl text-main ' >Job Details</h1>
                         <div className='flex justify-start items-center mid:justify-between	my-6'>
@@ -59,7 +59,7 @@ const JobDescription = () => {
                         <div>
                             <button className='py-5 px-8 bg-main rounded-lg text-white mb-8 hidden sm:block' >APPLY NOW</button>
 
-                            <h3 className='w-500 font-bold text-2xl	 text-main mb-2'> {title}     
+                            <h3 className='w-343 small:w-500 font-bold text-2xl	 text-main mb-2'> {title}     
                             </h3>
                             <span className='text-second absolute mt-6 sm:static '> Posted 2 days ago</span>
                         </div>
@@ -70,9 +70,9 @@ const JobDescription = () => {
                         
                    </div>
 
-                   <div className=' w-pagination xl:w-decription sm:w-descriptionMobile'>
-                        <p >{description}</p>
-                        <h4 className='mt-8'> Responsopilities</h4>
+                   <div className=' w-343 xl:w-decription sm:w-descriptionMobile'>
+                        <p>{description}</p>
+                        <h4 className='mt-8 '> Responsopilities</h4>
                         <p className='mb-8'>{responsopilities}</p>
 
                         <h4>Compensation & Benefits:</h4>
@@ -123,12 +123,12 @@ const JobDescription = () => {
                         </div>
 
                         <Link to='/'>
-                            <button className='bg-main px-12 py-2 rounded-md my-10' > return to job board</button>
+                            <button className='bg-main px-12 py-2 rounded-md my-10 text-white' > return to job board</button>
                         </Link>
                     </div>
                 </div>
 
-                <div className='ml-11 xxl:ml-0 w-80 large:w-map '>
+                <div className='ml-2  xxl:ml-0 w-343 large:w-map '>
                     <div className='py-6 px-8 bg-main  large:map rounded-t-md'>
                       <div className='ml-8 ' >
                             <p className='text-white mb-2 font-bold text-xl'>Department name. <br/>University Hospital Giessen.</p>
@@ -137,7 +137,9 @@ const JobDescription = () => {
                             <p className='text-white'> {email}</p>
                       </div>
                     </div>
-                    <div ><SimpleMap location={location} /></div>
+                    <div >
+                        <SimpleMap location={location} />
+                    </div>
                 </div>
             </main>
      
