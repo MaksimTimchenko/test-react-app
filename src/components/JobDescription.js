@@ -39,7 +39,7 @@ const JobDescription = () => {
 
         return (
              
-            <main className=' container px-4 small:px-0 mx-auto  flex justify-around  flex-col large:flex-row mt-7 '>
+            <main className=' container  px-4 small:px-0 mx-auto  flex justify-around  flex-col large:flex-row mt-7 '>
                 <div className='w-full  large:w-descriptionMobile'>
                     <div className='flex justify-between flex-col mid:flex-row border-b-2 border-main-500/50 h-11  '>
                         <h1 className='font-bold color-main text-2xl text-main ' >Job Details</h1>
