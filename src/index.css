@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "@fancyapps/ui/dist/fancybox.css";
+
+
+
+p{
+    color: #3A4562; 
+}
+
+h4 {
+    /* font-family: 'Proxima Nova'; */
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    color: #3A4562;
+    margin-bottom: 24px;
+}
