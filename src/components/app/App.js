@@ -13,6 +13,7 @@ const App = () => {
       <div> 
         <Routes>
           <Route  path="/" element={<ErrorBoundary> <JobsBoard/></ErrorBoundary>  }/>\
+          <Route  path="test-react-app" element={<ErrorBoundary> <JobsBoard/></ErrorBoundary>  }/>\
           <Route  path="/job/:jobId" element={<ErrorBoundary> <JobDescription/></ErrorBoundary> }/>
           <Route  path="*" element={<Page404/>}/>
         </Routes>   

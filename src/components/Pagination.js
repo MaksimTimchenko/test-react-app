@@ -38,8 +38,6 @@ const PaginatedItems = ({ itemsPerPage,items, View}) => {
         nextClassName= "border-l-2 pl-7 pr-6"
         previousClassName="border-r-2 pr-7 pl-6"
         disabledClassName="opacity-20"
-        
-        
       />
     </>
   );

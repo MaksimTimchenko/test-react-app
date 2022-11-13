@@ -39,7 +39,7 @@ const JobDescription = () => {
 
         return (
              
-            <main className=' container  px-4 small:px-0 mx-auto  flex justify-around  flex-col large:flex-row mt-7 '>
+            <main className=' container  px-4 mx-auto  flex justify-around  flex-col large:flex-row mt-7 '>
                 <div className='w-343  small:w-full large:w-descriptionMobile'>
                     <div className='flex justify-between flex-col mid:flex-row border-b-2 border-main-500/50 h-11  '>
                         <h1 className='font-bold color-main text-2xl text-main ' >Job Details</h1>
@@ -87,7 +87,6 @@ const JobDescription = () => {
 
                     <div>
                         <h2 className='font-bold text-xl text-main border-b-2 boder-main-500/50'>Additional info</h2>
-
                         <div className='mt-5'>
                             <p className=' text-main mb-3.5'>Employment type</p>
                             <div className='flex '>
@@ -96,7 +95,6 @@ const JobDescription = () => {
                                     return (<div key={i} className='w-56 h-14 mr-2 bg-button rounded-md border  border-buttonBorder  flex justify-center items-center text-main font-bold'>{item}</div>)
                                 }) : null
                             }
-                           
                             </div>
                             <p className=' text-main mt-3.5'>Benefits</p>
                             <div className='flex mt-2 '>
@@ -128,7 +126,8 @@ const JobDescription = () => {
                     </div>
                 </div>
 
-                <div className='ml-2  xxl:ml-0 w-343 large:w-map '>
+                <div className='ml-2 py-2 xxl:ml-0 w-343 mid:w-full large:w-map '>
+                    <h3 className='block mid:hidden font-bold text-xl text-main border-b-2 boder-main-500/50 mb-4 leading-9'>Contacts</h3>
                     <div className='py-6 px-8 bg-main  large:map rounded-t-md'>
                       <div className='ml-8 ' >
                             <p className='text-white mb-2 font-bold text-xl'>Department name. <br/>University Hospital Giessen.</p>
@@ -155,15 +154,11 @@ const JobDescription = () => {
     const errorMessage = error ? <ErrorMessage/> : null;
     return (
         <>
-        {spiner}
-        {errorMessage}
-        {content}
+            {spiner}
+            {errorMessage}
+            {content}
         </>
-        
         )
-        
-        
-    
 }
 
 export default JobDescription
