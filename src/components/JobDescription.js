@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link,useParams } from 'react-router-dom';
 
-import { Fancybox } from "@fancyapps/ui";
+import { Fancybox, Carousel } from "@fancyapps/ui";
 
 
 import useServices from '../services/services'
@@ -34,9 +34,12 @@ const JobDescription = () => {
         setJobsList(jobs[0])
         
     }
-    const renderItems = (arr) => {
-        const {address, benefits, description, responsopilities, compensation, email,employmentType,location ,phone,pictures,salary, title} = arr;
 
+   
+    const renderItems = (arr) => {
+        const {address, benefits, description, responsopilities, compensation, email,employmentType,location ,phone,pictures,salary,thumbnail, title} = arr;
+
+   
         return (
              
             <main className=' container  px-4 mx-auto  flex justify-around  flex-col large:flex-row mt-7 '>
@@ -109,14 +112,12 @@ const JobDescription = () => {
 
                         <div >
                             <h2 className='font-bold text-xl text-main border-b-2 boder-main-500/50 mt-20'>Attached images</h2>
-                            <div className='flex mt-6'>
+                            <div className='flex mt-6 carousel '>
                                 {
                                    pictures ? pictures.map((item,i) => (
-                                    
-                                        <img data-fancybox="gallery" key={i}src={item} alt="picture"  className='mr-2 w-52 h-28 rounded-md cursor-pointer '/>
+                                        <img data-fancybox="gallery" key={i}src={item} alt="picture"  className=' carousel__slide  mr-2 w-52 h-28 rounded-md cursor-pointer '/>
                                     )) : null
                                 }
-                                
                             </div>
                         </div>
 

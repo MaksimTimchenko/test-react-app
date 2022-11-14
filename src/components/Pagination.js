@@ -26,7 +26,7 @@ const PaginatedItems = ({ itemsPerPage,items, View}) => {
       <View currentItems={currentItems} />
       <ReactPaginate
         breakLabel="..."
-        nextLabel="next >"
+        nextLabel=">"
         onPageChange={handlePageClick}
         pageRangeDisplayed={5}
         pageCount={pageCount}
@@ -35,8 +35,8 @@ const PaginatedItems = ({ itemsPerPage,items, View}) => {
         pageClassName="page-item w-6 text-center text-xl text-page hover:text-pageActive"
         activeClassName=" leading-14  text-main border-b-2	border-pageActive "
         containerClassName="flex bg-white w-343 small:w-pagination mx-auto my-12 justify-center justify-between items-center shadow-md rounded-lg h-14	 "
-        nextClassName= "border-l-2 pl-7 pr-6"
-        previousClassName="border-r-2 pr-7 pl-6"
+        nextClassName= "border-l-2 pl-7 pr-6 font-bold text-page"
+        previousClassName="border-r-2 pr-7 pl-6 font-bold text-page"
         disabledClassName="opacity-20"
       />
     </>
