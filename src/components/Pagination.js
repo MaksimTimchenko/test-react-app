@@ -7,13 +7,13 @@ const PaginatedItems = ({ itemsPerPage,items, View}) => {
 
 
   const [itemOffset, setItemOffset] = useState(0);
-  const endOffset = itemOffset + 5;
+  const endOffset = itemOffset + itemsPerPage;
 
   const currentItems = items.slice(itemOffset, endOffset);
-  const pageCount = Math.ceil(items.length / 5);
+  const pageCount = Math.ceil(items.length / itemsPerPage);
 
   const handlePageClick = (event) => {
-    const newOffset = (event.selected * 5) % items.length;
+    const newOffset = (event.selected * itemsPerPage) % items.length;
     
     setItemOffset(newOffset);
   };

@@ -1,6 +1,6 @@
 const Spinner = () => {
   return (
-      <svg xmlns="http://www.w3.org/2000/svg" className="mx-auto block mt-64	" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+      <svg xmlns="http://www.w3.org/2000/svg" className="mx-auto block mt-56	" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
           <g transform="translate(80,50)">
           <g transform="rotate(0)">
           <circle cx="0" cy="0" r="7" fill="#1c4595" fillOpacity="1">

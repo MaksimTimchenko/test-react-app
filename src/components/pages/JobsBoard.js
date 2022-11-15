@@ -23,7 +23,7 @@ const JobsBoard = () => {
     }
 
     const onJobsListLoaded = (newJobsList) => {
-        setJobsList(jobsList => [...jobsList, ...newJobsList]);
+        setJobsList(jobsList => [...newJobsList]);
     }
 
 
@@ -31,7 +31,7 @@ const JobsBoard = () => {
          return (
             <div>
                 <ErrorBoundary>
-                  <PaginatedItems itemsPerPage={3} items={jobsList} View={View} loading={loading} error={error} />
+                  <PaginatedItems itemsPerPage={5} items={jobsList} View={View} />
                 </ErrorBoundary>
             </div>
          )
