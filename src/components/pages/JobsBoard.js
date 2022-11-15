@@ -1,10 +1,12 @@
 import {useState, useEffect} from 'react'
 
-import useServices from '../services/services'
-import ErrorMessage from './errorMessage/ErrorMessage'
-import Spinner from './spiner/Spinner'
-import Job from './Job'
-import PaginatedItems from './Pagination'
+import ErrorBoundary from '../ErrorBoundary'
+
+import useServices from '../../services/services'
+import ErrorMessage from '../errorMessage/ErrorMessage'
+import Spinner from '../spiner/Spinner'
+import Job from '../Job'
+import PaginatedItems from '../Pagination'
 
 const JobsBoard = () => {
     const [jobsList, setJobsList] = useState([]);
@@ -28,7 +30,9 @@ const JobsBoard = () => {
     function renderItems () {
          return (
             <div>
-                <PaginatedItems itemsPerPage={3} items={jobsList} View={View} loading={loading} error={error} />
+                <ErrorBoundary>
+                  <PaginatedItems itemsPerPage={3} items={jobsList} View={View} loading={loading} error={error} />
+                </ErrorBoundary>
             </div>
          )
     }
@@ -55,7 +59,9 @@ const JobsBoard = () => {
           <>
             {
               currentItems.map((item) => (
-                 <Job key={item.id} item={item} findDate={item.created}/> 
+
+                   <Job key={item.id} item={item} findDate={item.created}/> 
+
               ))
             }
           </>

@@ -3,14 +3,14 @@ import { Link,useParams } from 'react-router-dom';
 
 import { Fancybox, Carousel } from "@fancyapps/ui";
 
+import ErrorBoundary from '../ErrorBoundary';
+import useServices from '../../services/services'
+import SimpleMap from '../Map'
+import ErrorMessage from '../errorMessage/ErrorMessage';
+import Spinner from '../spiner/Spinner';
 
-import useServices from '../services/services'
-import SimpleMap from './Map'
-import ErrorMessage from './errorMessage/ErrorMessage';
-import Spinner from './spiner/Spinner';
-
-import bookMark from './assets/Bookmark.svg'
-import share from './assets/Share.svg'
+import bookMark from '../assets/Bookmark.svg'
+import share from '../assets/Share.svg'
 
 
 const JobDescription = () => {
@@ -112,10 +112,10 @@ const JobDescription = () => {
 
                         <div >
                             <h2 className='font-bold text-xl text-main border-b-2 boder-main-500/50 mt-20'>Attached images</h2>
-                            <div className='flex mt-6 carousel '>
+                            <div className='flex mt-6 '>
                                 {
                                    pictures ? pictures.map((item,i) => (
-                                        <img data-fancybox="gallery" key={i}src={item} alt="picture"  className=' carousel__slide  mr-2 w-52 h-28 rounded-md cursor-pointer '/>
+                                        <img data-fancybox="gallery" key={i} src={item} alt="picture"  className='mr-2 w-52 h-28 rounded-md cursor-pointer '/>
                                     )) : null
                                 }
                             </div>
@@ -138,7 +138,9 @@ const JobDescription = () => {
                       </div>
                     </div>
                     <div >
-                        <SimpleMap location={location} />
+                       <ErrorBoundary>
+                            <SimpleMap location={location} />
+                       </ErrorBoundary>
                     </div>
                 </div>
             </main>

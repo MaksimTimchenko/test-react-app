@@ -11,7 +11,7 @@ const Job = ({item}) => {
     }
 
     const isBooKMark = (e) => {
-        e.target.classList.add('fill-yellow-500')
+        (e.target.classList.contains("fill-yellow-500") === true) ? e.target.classList.remove("fill-yellow-500") : e.target.classList.add("fill-yellow-500");
     }
 
     return (
@@ -25,7 +25,7 @@ const Job = ({item}) => {
                     <Link to={`/job/${item.id}`} className=' hidden mid:inline font-bold text-lg small:text-sm mid:text-xl  text-main w-sm '>
                         {item.title}
                     </Link>
-                    <Link to={`/job/${item.id}`} className=' inline  mid:hidden font-bold text-lg   text-main w-sm '>
+                    <Link to={`/job/${item.id}`} title={item.title} className=' inline  mid:hidden font-bold text-lg   text-main w-sm '>
                        {item.titleShort}...
                     </Link>
                     <p className='mt-2 text-second text-sm mid:text-base '>

@@ -26,7 +26,7 @@ const useServices = () => {
         const description = job.description.split('Responsopilities')[0];
         const responsopilities = job.description.split('Responsopilities:')[1].split('Compensation & Benefits:')[0];
         const benefits =job.description.split('Responsopilities:')[1].split('Compensation & Benefits:')[0].split('. ');
-        const titleShort = job.title.substr(0,52)
+        const titleShort = job.title.substr(0,40)
 
 
 
@@ -46,7 +46,7 @@ const useServices = () => {
             pictures: job.pictures,
             salary: job.salary,
             title: job.title,
-            titleShort: titleShort,
+            titleShort,
             thumbnail: job.pictures[2],
         }
     }
