@@ -21,7 +21,7 @@ const Job = ({item}) => {
                 <div>
                     <img src={item.thumbnail} alt="logo"  className=' mr-6 mid:mr-0 w-16 h-16 mid:w-20 mid:h-20 rounded-full '/>
                 </div>
-                <div className='ml-2  mid:ml-6 w-4/5  '>
+                <div className='ml-2  mid:ml-6 w-5/6 '>
                     <Link to={`/job/${item.id}`} className=' hidden mid:inline font-bold text-lg small:text-sm mid:text-xl  text-main w-sm '>
                         {item.title}
                     </Link>
@@ -31,9 +31,9 @@ const Job = ({item}) => {
                     <p className='mt-2 text-second text-sm mid:text-base '>
                         Department name •  {item.address} Stadt Wien - AKH
                     </p>
-                    <div className='mt-2 mid:mt-2 flex  '>
+                    <div className='mt-2 mid:mt-0  large:mt-2 flex  '>
                         <img src={location} alt="location" className='cursor-pointers' / >
-                        <p className='text-second ml-2 mt text-sm mid:text-base '>Vienna, Austria</p>
+                        <p className='text-second ml-2  mt text-sm mid:text-base '>Vienna, Austria</p>
                     </div>
                 </div> 
             </div>
