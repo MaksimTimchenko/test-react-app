@@ -27,7 +27,7 @@ const useServices = () => {
         const responsopilities = job.description.split('Responsopilities:')[1].split('Compensation & Benefits:')[0];
         const benefits =job.description.split('Responsopilities:')[1].split('Compensation & Benefits:')[0].split('. ');
         const titleShort = job.title.substr(0,40)
-
+        console.log(job);
 
 
         return {
@@ -41,7 +41,7 @@ const useServices = () => {
             employmentType: job.employment_type,
             id: job.id,
             location: job.location,
-            name: job.name,
+            jobName: job.name,
             phone: job.phone,
             pictures: job.pictures,
             salary: job.salary,

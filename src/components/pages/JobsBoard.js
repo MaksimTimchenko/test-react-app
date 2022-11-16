@@ -59,9 +59,7 @@ const JobsBoard = () => {
           <>
             {
               currentItems.map((item) => (
-
                    <Job key={item.id} item={item} findDate={item.created}/> 
-
               ))
             }
           </>

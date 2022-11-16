@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Link,useParams } from 'react-router-dom';
 
-import { Fancybox, Carousel } from "@fancyapps/ui";
+import { Fancybox } from "@fancyapps/ui";
 
-import ErrorBoundary from '../ErrorBoundary';
+import findDate from '../findDate';
+
+
 import useServices from '../../services/services'
-import SimpleMap from '../Map'
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import Spinner from '../spiner/Spinner';
 
@@ -32,22 +33,21 @@ const JobDescription = () => {
 
     const onJobsListLoaded = (jobs) => {
         setJobsList(jobs[0])
-        
     }
 
    
     const renderItems = (arr) => {
-        const {address, benefits, description, responsopilities, compensation, email,employmentType,location ,phone,pictures,salary,thumbnail, title} = arr;
+        const {address, benefits, description, responsopilities, created, compensation, jobName, email,employmentType,location ,phone,pictures,salary, title} = arr;
 
    
         return (
              
-            <main className=' container  px-4 mx-auto  flex justify-around  flex-col large:flex-row mt-7 '>
-                <div className='w-343  small:w-full large:w-descriptionMobile'>
+            <main className=' container px-4 mx-auto  flex justify-around flex-col large:flex-row mt-7 '>
+                <div className='w-343 small:w-full large:w-descriptionMobile'>
                     <div className='flex justify-between flex-col mid:flex-row border-b-2 border-main-500/50 h-11  '>
-                        <h1 className='font-bold color-main text-2xl text-main ' >Job Details</h1>
+                        <h1 className='font-bold color-main text-2xl text-main'>Job Details</h1>
                         <div className='flex justify-start items-center mid:justify-between	my-6'>
-                            <div className='flex mr-6 '>
+                            <div className='flex mr-6'>
                                 <img src={bookMark} alt="bookmark" className='w-8 h-8 mr-2' />
                                 <span className='text-main'>Save to my list</span>
                             </div>
@@ -64,7 +64,7 @@ const JobDescription = () => {
 
                             <h3 className='w-343 small:w-500 font-bold text-2xl	 text-main mb-2'> {title}     
                             </h3>
-                            <span className='text-second absolute mt-6 sm:static '> Posted 2 days ago</span>
+                            <span className='text-second absolute mt-6 sm:static '> Posted {findDate(created)} ago</span>
                         </div>
                         <div className='flex flex-col-reverse justify-start items-end sm:items-start sm:flex-col' >
                             <span className='font-bold text-xl	text-main'>€ {salary}</span>
@@ -131,16 +131,18 @@ const JobDescription = () => {
                     <h3 className='block mid:hidden font-bold text-xl text-main border-b-2 boder-main-500/50 mb-4 leading-9'>Contacts</h3>
                     <div className='py-6 px-8 bg-main  large:map rounded-t-md'>
                       <div className='ml-8 ' >
-                            <p className='text-white mb-2 font-bold text-xl'>Department name. <br/>University Hospital Giessen.</p>
+                            <p className='text-white mb-2 font-bold text-xl'>Department name. <br/>{jobName}</p>
                             <p className='text-white'>{address} <br/> Gürtel 18-20 </p>
                             <p className='text-white'>{phone},</p>
                             <p className='text-white'> {email}</p>
                       </div>
                     </div>
                     <div >
-                       <ErrorBoundary>
-                            <SimpleMap location={location} />
-                       </ErrorBoundary>
+                       <iframe
+                            className="w-full h-52 rounded-b-lg grayscale-[100%] invert-[100%] contrast-[80%]
+                            lg:max-w-[402px];"
+                            src={`//maps.google.com/maps?q=${location ? location.lat : null},${location ? location.long : null}&z=12&amp&output=embed`}
+                        ></iframe>
                     </div>
                 </div>
             </main>
