@@ -1,8 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url(http://fonts.cdnfonts.com/css/proxima-nova-2);
 
 @import "@fancyapps/ui/dist/fancybox.css";
+
+
+* {
+    font-family: "Proxima Nova", sans-serif;
+}
+body {
+    background: #e6e9f2;
+}
 
 
 
