@@ -17,21 +17,21 @@ const Job = ({item}) => {
             </div>
             <div className=' flex mr-0 large:mr-12 h-28 w-sm mt-4 mid:mt-0'>
                 <div>
-                    <img src={item.thumbnail} alt="logo"  className='mr-6 mid:mr-0 w-16 h-16 mid:w-20 mid:h-20 rounded-full '/>
+                    <img src={item.thumbnail} alt="logo"  className='mr-6 mt-3.5 mid:mr-0 w-16 h-16 mid:w-20 mid:h-20 rounded-full '/>
                 </div>
-                <div className='ml-2 mid:ml-6 w-5/6 '>
+                <div className='ml-2 mt-3.5 mid:mt-0 mid:ml-6 w-5/6 '>
                     <Link to={`/job/${item.id}`} className='hidden mid:inline font-bold text-lg small:text-sm mid:text-xl  text-main w-sm '>
                         {item.title}
                     </Link>
-                    <Link to={`/job/${item.id}`} title={item.title} className='inline mid:hidden font-bold text-lg text-main w-sm '>
+                    <Link to={`/job/${item.id}`} title={item.title} className='inline mid:hidden text-lg text-main w-sm '>
                        {item.titleShort}...
                     </Link>
-                    <p className='mt-2 text-second text-sm mid:text-base '>
+                    <p className='mt-2 text-second  mid:text-base '>
                         Department name • {item.jobName}
                     </p>
                     <div className='mt-2 mid:mt-0  large:mt-2 flex  '>
                         <img src={location} alt="location" className='cursor-pointers' / >
-                        <p className='text-second ml-2  mt text-sm mid:text-base '>{item.address} </p>
+                        <p className='text-second ml-2  mid:text-base '>{item.address} </p>
                     </div>
                 </div> 
             </div>
